@@ -10,4 +10,6 @@
 
 @interface PeopleCell : UITableViewCell
 
+@property (nonatomic,strong)UILabel *content;
+
 @end

@@ -10,4 +10,7 @@
 
 @interface EditDataVC : UIViewController
 
+@property (nonatomic,copy) NSString *isFmdb;
+@property (nonatomic,copy)void (^backBlcok)();
+
 @end

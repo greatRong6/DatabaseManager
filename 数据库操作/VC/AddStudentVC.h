@@ -10,4 +10,6 @@
 
 @interface AddStudentVC : UIViewController
 
+@property (nonatomic,copy)NSString *isFmdb;
+
 @end

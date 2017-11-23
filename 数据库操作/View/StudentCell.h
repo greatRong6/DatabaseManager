@@ -10,4 +10,10 @@
 
 @interface StudentCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *telNum;
+
+-(void)initWithData:(id)data;
+-(void)initWithModelData:(id)data;
+
 @end

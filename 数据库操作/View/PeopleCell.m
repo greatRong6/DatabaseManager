@@ -10,6 +10,26 @@
 
 @implementation PeopleCell
 
+-(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
+    
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        
+        self.content = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+        self.content.font = [UIFont systemFontOfSize:14.0f];
+        [self.contentView addSubview:self.content];
+        
+    }
+    return self;
+    
+}
+
+-(void)initWithConTent:(NSString *)content{
+    
+    
+    
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
