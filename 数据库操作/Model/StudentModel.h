@@ -10,4 +10,9 @@
 
 @interface StudentModel : NSObject
 
+@property (nonatomic,copy)NSString *name;
+@property (nonatomic,copy)NSString *userID;
+@property (nonatomic,copy)NSString *telNum;
+@property (nonatomic,copy)NSString *pinyin;
+
 @end
