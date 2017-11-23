@@ -88,6 +88,7 @@
         tempMod.userName = self.add.nameTextF.text;
         tempMod.userID = [self ret32bitString];
         tempMod.telNum = self.add.telTextF.text;
+        tempMod.pinyin = [NSString transformToPinyin:model.name];
         
         NSLog(@"tempMod.userID %@",tempMod.userID);
         

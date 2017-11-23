@@ -17,7 +17,6 @@
 		6A2886721FC66A25005869D6 /* UIAlertController+GZRAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886541FC66A24005869D6 /* UIAlertController+GZRAlertController.m */; };
 		6A2886731FC66A25005869D6 /* AddStudentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886571FC66A24005869D6 /* AddStudentVC.m */; };
 		6A2886741FC66A25005869D6 /* EditDataVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886591FC66A24005869D6 /* EditDataVC.m */; };
-		6A2886751FC66A25005869D6 /* QueryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A28865B1FC66A25005869D6 /* QueryVC.m */; };
 		6A2886761FC66A25005869D6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A28865D1FC66A25005869D6 /* ViewController.m */; };
 		6A2886781FC66A25005869D6 /* AddView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886611FC66A25005869D6 /* AddView.m */; };
 		6A2886791FC66A25005869D6 /* AddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2886621FC66A25005869D6 /* AddView.xib */; };
@@ -71,8 +70,6 @@
 		6A2886571FC66A24005869D6 /* AddStudentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddStudentVC.m; sourceTree = "<group>"; };
 		6A2886581FC66A24005869D6 /* EditDataVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditDataVC.h; sourceTree = "<group>"; };
 		6A2886591FC66A24005869D6 /* EditDataVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDataVC.m; sourceTree = "<group>"; };
-		6A28865A1FC66A25005869D6 /* QueryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueryVC.h; sourceTree = "<group>"; };
-		6A28865B1FC66A25005869D6 /* QueryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueryVC.m; sourceTree = "<group>"; };
 		6A28865C1FC66A25005869D6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6A28865D1FC66A25005869D6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6A2886601FC66A25005869D6 /* AddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddView.h; sourceTree = "<group>"; };
@@ -178,8 +175,6 @@
 				6A2886571FC66A24005869D6 /* AddStudentVC.m */,
 				6A2886581FC66A24005869D6 /* EditDataVC.h */,
 				6A2886591FC66A24005869D6 /* EditDataVC.m */,
-				6A28865A1FC66A25005869D6 /* QueryVC.h */,
-				6A28865B1FC66A25005869D6 /* QueryVC.m */,
 				6A28865C1FC66A25005869D6 /* ViewController.h */,
 				6A28865D1FC66A25005869D6 /* ViewController.m */,
 			);
@@ -488,7 +483,6 @@
 				6A2886731FC66A25005869D6 /* AddStudentVC.m in Sources */,
 				6A28866E1FC66A25005869D6 /* StudentModel.m in Sources */,
 				6A2886741FC66A25005869D6 /* EditDataVC.m in Sources */,
-				6A2886751FC66A25005869D6 /* QueryVC.m in Sources */,
 				6A28867B1FC66A25005869D6 /* QueryCell.m in Sources */,
 				6A28867A1FC66A25005869D6 /* PeopleCell.m in Sources */,
 			);

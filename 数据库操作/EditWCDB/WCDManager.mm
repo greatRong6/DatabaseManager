@@ -81,7 +81,7 @@ static NSString *const UserTable = @"user";
 
 - (BOOL)updateAgeAndUserIDWithMod:(WCDModel*)mod
 {
-    return [self.table updateRowsOnProperties:{WCDModel.telNum,WCDModel.userID}  withObject:mod where:WCDModel.userName == mod.userName];
+    return [self.table updateRowsOnProperties:{WCDModel.telNum,WCDModel.userID,WCDModel.pinyin}  withObject:mod where:WCDModel.userName == mod.userName];
 }
 
 - (BOOL)deleteUser:(WCDModel*)mod
@@ -96,10 +96,16 @@ static NSString *const UserTable = @"user";
 
 - (WCDModel *)getUserWithId:(NSString*)userID
 {
-    return [self.table getObjectsWhere:WCDModel.userID ==userID].firstObject;
+    return [self.table getObjectsWhere:WCDModel.userID == userID].firstObject;
 }
 
-- (NSArray*)getUsersWithTelNum:(NSInteger)telNum
+- (NSArray *)getUserWithName:(NSString *)pinyin{
+    
+    return [self.table getObjectsWhere:(WCDModel.pinyin.like([NSString stringWithFormat:@"%%%@%%",pinyin]),WCDModel.telNum.like([NSString stringWithFormat:@"%%%@%%",pinyin]))];
+    
+}
+
+- (NSArray*) :(NSInteger)telNum
 {
     return [self.table getObjectsWhere:WCDModel.telNum == telNum];
 }

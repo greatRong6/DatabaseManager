@@ -15,6 +15,7 @@
 WCDB_PROPERTY(userName)
 WCDB_PROPERTY(userID)
 WCDB_PROPERTY(telNum)
+WCDB_PROPERTY(pinyin)
 
 WCDB_PROPERTY(location)
 WCDB_PROPERTY(createdate)

@@ -39,4 +39,7 @@
 //查询所有数据
 - (NSArray*)getAllUser;
 
+//按拼音查询
+- (NSArray *)getUserWithName:(NSString *)pinyin;
+
 @end

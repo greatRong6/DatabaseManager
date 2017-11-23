@@ -13,6 +13,7 @@
 @property (nonatomic, copy)   NSString  *userName;
 @property (nonatomic, copy)   NSString  *userID;
 @property (nonatomic, copy)   NSString  *telNum;
+@property (nonatomic, copy)   NSString  *pinyin;
 
 @property (nonatomic, copy)   NSString  *location;
 @property (nonatomic, assign) NSInteger createdate;

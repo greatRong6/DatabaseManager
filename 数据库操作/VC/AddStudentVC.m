@@ -131,11 +131,8 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"StudentCell" bundle:nil] forCellReuseIdentifier:@"StudentCell"];
     self.tableView.tableFooterView = [[UIView alloc] init];
-    if ([self.isFmdb isEqualToString:@"0"]) {
-        self.tableView.tableHeaderView = [self headView];
-    }else{
-        
-    }
+
+    self.tableView.tableHeaderView = [self headView];
     
     UIButton *deleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     deleBtn.backgroundColor = [UIColor redColor];
@@ -269,11 +266,24 @@
     
     dispatch_queue_t globalQueue = dispatch_get_global_queue(0, 0);
     dispatch_async(globalQueue, ^{
-        if (searchText!=nil && searchText.length>0) {
-            NSArray *array = [[EditFMDB shareInstance] queryDataWithTableName:@"people.sqlite" keyword:searchText];
-            [self.dataSource addObjectsFromArray:array];
+        if ([self.isFmdb isEqualToString:@"0"]) {
+            
+            if (searchText!=nil && searchText.length>0) {
+                NSArray *array = [[EditFMDB shareInstance] queryDataWithTableName:@"people.sqlite" keyword:searchText];
+                [self.dataSource addObjectsFromArray:array];
+            }else{
+                self.dataSource = [NSMutableArray arrayWithArray:self.dataArray];
+            }
+            
         }else{
-            self.dataSource = [NSMutableArray arrayWithArray:self.dataArray];
+            
+            if (searchText!=nil && searchText.length>0) {
+                NSArray *array = [[WCDManager defaultManager] getUserWithName:searchText];
+                [self.dataSource addObjectsFromArray:array];
+            }else{
+                self.dataSource = [NSMutableArray arrayWithArray:self.dataArray];
+            }
+
         }
         //回到主线程
         dispatch_async(dispatch_get_main_queue(), ^{
