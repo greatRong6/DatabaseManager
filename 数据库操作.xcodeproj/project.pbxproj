@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4EBC87D1F3196BBDE164141A /* libPods-数据库操作.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A0E7EAC7932508376ADB8 /* libPods-数据库操作.a */; };
-		6A28866B1FC66A25005869D6 /* EditWCDB.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886431FC66A24005869D6 /* EditWCDB.mm */; };
 		6A28866C1FC66A25005869D6 /* WCDManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886451FC66A24005869D6 /* WCDManager.mm */; };
 		6A28866D1FC66A25005869D6 /* WCDModel+WCTTableCoding.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886471FC66A24005869D6 /* WCDModel+WCTTableCoding.mm */; };
 		6A28866E1FC66A25005869D6 /* StudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A28864A1FC66A24005869D6 /* StudentModel.m */; };
@@ -54,8 +53,6 @@
 
 /* Begin PBXFileReference section */
 		2C96C6B26D4002277A8DA0A5 /* Pods-数据库操作.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-数据库操作.release.xcconfig"; path = "Pods/Target Support Files/Pods-数据库操作/Pods-数据库操作.release.xcconfig"; sourceTree = "<group>"; };
-		6A2886421FC66A24005869D6 /* EditWCDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditWCDB.h; sourceTree = "<group>"; };
-		6A2886431FC66A24005869D6 /* EditWCDB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EditWCDB.mm; sourceTree = "<group>"; };
 		6A2886441FC66A24005869D6 /* WCDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCDManager.h; sourceTree = "<group>"; };
 		6A2886451FC66A24005869D6 /* WCDManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WCDManager.mm; sourceTree = "<group>"; };
 		6A2886461FC66A24005869D6 /* WCDModel+WCTTableCoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WCDModel+WCTTableCoding.h"; sourceTree = "<group>"; };
@@ -97,10 +94,10 @@
 		6AE14C5F1F6B7A380051A507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AE14C611F6B7A380051A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE14C661F6B7A380051A507 /* 数据库操作Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "数据库操作Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AE14C6A1F6B7A380051A507 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _____Tests.m; sourceTree = "<group>"; };
+		6AE14C6A1F6B7A380051A507 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____Tests.m"; sourceTree = "<group>"; };
 		6AE14C6C1F6B7A380051A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE14C711F6B7A380051A507 /* 数据库操作UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "数据库操作UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AE14C751F6B7A380051A507 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _____UITests.m; sourceTree = "<group>"; };
+		6AE14C751F6B7A380051A507 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
 		6AE14C771F6B7A380051A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E16E9F7BBEE4700B7D85071B /* Pods-数据库操作.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-数据库操作.debug.xcconfig"; path = "Pods/Target Support Files/Pods-数据库操作/Pods-数据库操作.debug.xcconfig"; sourceTree = "<group>"; };
 		E20A0E7EAC7932508376ADB8 /* libPods-数据库操作.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-数据库操作.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,8 +132,6 @@
 		6A2886411FC66A24005869D6 /* EditWCDB */ = {
 			isa = PBXGroup;
 			children = (
-				6A2886421FC66A24005869D6 /* EditWCDB.h */,
-				6A2886431FC66A24005869D6 /* EditWCDB.mm */,
 				6A2886441FC66A24005869D6 /* WCDManager.h */,
 				6A2886451FC66A24005869D6 /* WCDManager.mm */,
 				6A2886461FC66A24005869D6 /* WCDModel+WCTTableCoding.h */,
@@ -483,7 +478,6 @@
 				6A2886711FC66A25005869D6 /* NSString+category.m in Sources */,
 				6A2886721FC66A25005869D6 /* UIAlertController+GZRAlertController.m in Sources */,
 				6A28867D1FC66A25005869D6 /* StudentCell.m in Sources */,
-				6A28866B1FC66A25005869D6 /* EditWCDB.mm in Sources */,
 				6A28866D1FC66A25005869D6 /* WCDModel+WCTTableCoding.mm in Sources */,
 				6AE14C551F6B7A380051A507 /* AppDelegate.m in Sources */,
 				6A28866F1FC66A25005869D6 /* WCDModel.m in Sources */,
