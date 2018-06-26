@@ -9,6 +9,7 @@
 #import "StudentCell.h"
 #import "StudentModel.h"
 #import "WCDModel.h"
+#import "RealmModel.h"
 
 @implementation StudentCell
 
@@ -34,6 +35,14 @@
     self.name.text = [NSString stringWithFormat:@"姓名:%@",model.userName];
     self.telNum.text = [NSString stringWithFormat:@"手机号:%@",model.telNum];
 
+}
+
+-(void)initWithRealmData:(id)data{
+    
+    RealmModel *model = (RealmModel *)data;
+    self.name.text = [NSString stringWithFormat:@"姓名:%@",model.name];
+    self.telNum.text = [NSString stringWithFormat:@"手机号:%@",model.telNum];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -4,6 +4,7 @@ target '数据库操作' do
 
 pod 'FMDB'
 pod 'WCDB'
+pod 'Realm'
 
 end
 

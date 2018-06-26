@@ -1,1 +1,1 @@
-../../../WCDB/apple/WCDB/abstract/literal_value.hpp
+../../../WCDB/objc/WCDB/abstract/literal_value.hpp

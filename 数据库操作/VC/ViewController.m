@@ -28,7 +28,7 @@
     
     [self creatTableView];
     
-    self.dataSource = [[NSMutableArray alloc] initWithArray:@[@"FMDB",@"WCDB"]];
+    self.dataSource = [[NSMutableArray alloc] initWithArray:@[@"FMDB",@"WCDB",@"Realm"]];
 
     // Do any additional setup after loading the view, typically from a nib.
 }
@@ -74,8 +74,10 @@
     NSString *isFmdb = self.dataSource[indexPath.row];
     if ([isFmdb isEqualToString:@"FMDB"]) {
         student.isFmdb = @"0";
-    }else{
+    }else if([isFmdb isEqualToString:@"WCDB"]){
         student.isFmdb = @"1";
+    }else{
+        student.isFmdb = @"2";
     }
     [self.navigationController pushViewController:student animated:YES];
     

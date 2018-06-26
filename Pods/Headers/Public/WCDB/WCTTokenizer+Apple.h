@@ -1,1 +1,1 @@
-../../../WCDB/apple/WCDB/interface/fts/WCTTokenizer+Apple.h
+../../../WCDB/objc/WCDB/interface/fts/WCTTokenizer+Apple.h

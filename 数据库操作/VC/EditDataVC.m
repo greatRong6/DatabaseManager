@@ -16,6 +16,8 @@
 #import "WCDModel.h"
 #import "WCDManager.h"
 
+#import "RealmManager.h"
+
 #define DEF_WIDTH [UIScreen mainScreen].bounds.size.width
 #define DEF_HEIGHT [UIScreen mainScreen].bounds.size.height
 
@@ -81,7 +83,7 @@
             
         }
         
-    }else{
+    }else if ([self.isFmdb isEqualToString:@"1"]) {
         
         WCDModel *tempMod = [WCDModel new];
         tempMod.createdate =  [[NSDate date] timeIntervalSince1970]*1000;
@@ -93,17 +95,42 @@
         NSLog(@"tempMod.userID %@",tempMod.userID);
         
         if ([[WCDManager defaultManager] insertUser:tempMod]) {
+            
             NSLog(@"添加字段成功");
             if (self.backBlcok) {
                 self.backBlcok();
             }
             [self.navigationController popViewControllerAnimated:YES];
+            
         }else{
+            
             [UIAlertController initWithShowTitle:@"提示" message:@"添加字段失败" viewController:self];
+            
+        }
+        
+    }else{
+        
+        RealmModel *realmModel = [[RealmModel alloc] init];
+        realmModel.name = self.add.nameTextF.text;
+        realmModel.userID = [self ret32bitString];
+        realmModel.telNum = self.add.telTextF.text;
+        realmModel.pinyin = [NSString transformToPinyin:model.name];
+        
+        if ([[RealmManager shareInstance] openRealmD]) {
+            
+            [[RealmManager shareInstance] creatDataBaseWithName:realmModel];
+            if (self.backBlcok) {
+                self.backBlcok();
+            }
+            [self.navigationController popViewControllerAnimated:YES];
+
+        }else{
+            
+            NSLog(@"失败");
+            
         }
         
     }
-    
 }
 
 -(NSString *)ret32bitString

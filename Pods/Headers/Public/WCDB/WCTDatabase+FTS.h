@@ -1,1 +1,1 @@
-../../../WCDB/apple/WCDB/interface/fts/WCTDatabase+FTS.h
+../../../WCDB/objc/WCDB/interface/fts/WCTDatabase+FTS.h

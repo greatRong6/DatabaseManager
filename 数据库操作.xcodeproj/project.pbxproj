@@ -25,6 +25,8 @@
 		6A28867C1FC66A25005869D6 /* QueryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A2886671FC66A25005869D6 /* QueryCell.xib */; };
 		6A28867D1FC66A25005869D6 /* StudentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886691FC66A25005869D6 /* StudentCell.m */; };
 		6A28867E1FC66A25005869D6 /* StudentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A28866A1FC66A25005869D6 /* StudentCell.xib */; };
+		6A2886D01FC7B4DB005869D6 /* RealmModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886CF1FC7B4DB005869D6 /* RealmModel.m */; };
+		6A2886D31FC7BCE1005869D6 /* RealmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2886D21FC7BCE1005869D6 /* RealmManager.m */; };
 		6AE14C521F6B7A380051A507 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE14C511F6B7A380051A507 /* main.m */; };
 		6AE14C551F6B7A380051A507 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AE14C541F6B7A380051A507 /* AppDelegate.m */; };
 		6AE14C5B1F6B7A380051A507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AE14C591F6B7A380051A507 /* Main.storyboard */; };
@@ -83,6 +85,10 @@
 		6A2886681FC66A25005869D6 /* StudentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentCell.h; sourceTree = "<group>"; };
 		6A2886691FC66A25005869D6 /* StudentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentCell.m; sourceTree = "<group>"; };
 		6A28866A1FC66A25005869D6 /* StudentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentCell.xib; sourceTree = "<group>"; };
+		6A2886CE1FC7B4DB005869D6 /* RealmModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmModel.h; sourceTree = "<group>"; };
+		6A2886CF1FC7B4DB005869D6 /* RealmModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmModel.m; sourceTree = "<group>"; };
+		6A2886D11FC7BCE1005869D6 /* RealmManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmManager.h; sourceTree = "<group>"; };
+		6A2886D21FC7BCE1005869D6 /* RealmManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmManager.m; sourceTree = "<group>"; };
 		6AE14C4D1F6B7A380051A507 /* 数据库操作.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "数据库操作.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AE14C511F6B7A380051A507 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6AE14C531F6B7A380051A507 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,10 +97,10 @@
 		6AE14C5F1F6B7A380051A507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6AE14C611F6B7A380051A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE14C661F6B7A380051A507 /* 数据库操作Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "数据库操作Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AE14C6A1F6B7A380051A507 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____Tests.m"; sourceTree = "<group>"; };
+		6AE14C6A1F6B7A380051A507 /* _____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _____Tests.m; sourceTree = "<group>"; };
 		6AE14C6C1F6B7A380051A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6AE14C711F6B7A380051A507 /* 数据库操作UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "数据库操作UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AE14C751F6B7A380051A507 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_____UITests.m"; sourceTree = "<group>"; };
+		6AE14C751F6B7A380051A507 /* _____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _____UITests.m; sourceTree = "<group>"; };
 		6AE14C771F6B7A380051A507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E16E9F7BBEE4700B7D85071B /* Pods-数据库操作.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-数据库操作.debug.xcconfig"; path = "Pods/Target Support Files/Pods-数据库操作/Pods-数据库操作.debug.xcconfig"; sourceTree = "<group>"; };
 		E20A0E7EAC7932508376ADB8 /* libPods-数据库操作.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-数据库操作.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +205,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		6A2886CD1FC7AF94005869D6 /* RealmManager */ = {
+			isa = PBXGroup;
+			children = (
+				6A2886CE1FC7B4DB005869D6 /* RealmModel.h */,
+				6A2886CF1FC7B4DB005869D6 /* RealmModel.m */,
+				6A2886D11FC7BCE1005869D6 /* RealmManager.h */,
+				6A2886D21FC7BCE1005869D6 /* RealmManager.m */,
+			);
+			path = RealmManager;
+			sourceTree = "<group>";
+		};
 		6AE14C441F6B7A380051A507 = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +241,7 @@
 		6AE14C4F1F6B7A380051A507 /* 数据库操作 */ = {
 			isa = PBXGroup;
 			children = (
+				6A2886CD1FC7AF94005869D6 /* RealmManager */,
 				6A28864D1FC66A24005869D6 /* EditFMDB */,
 				6A2886411FC66A24005869D6 /* EditWCDB */,
 				6A2886501FC66A24005869D6 /* Extend */,
@@ -294,8 +312,6 @@
 				6AE14C491F6B7A380051A507 /* Sources */,
 				6AE14C4A1F6B7A380051A507 /* Frameworks */,
 				6AE14C4B1F6B7A380051A507 /* Resources */,
-				F0D4144D3DAB67CE73CE2BAB /* [CP] Embed Pods Frameworks */,
-				C386DC0E16E879E0758ABAB5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,43 +439,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-数据库操作-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C386DC0E16E879E0758ABAB5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-数据库操作/Pods-数据库操作-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F0D4144D3DAB67CE73CE2BAB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-数据库操作/Pods-数据库操作-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -481,6 +470,8 @@
 				6A2886761FC66A25005869D6 /* ViewController.m in Sources */,
 				6A28866C1FC66A25005869D6 /* WCDManager.mm in Sources */,
 				6A2886731FC66A25005869D6 /* AddStudentVC.m in Sources */,
+				6A2886D01FC7B4DB005869D6 /* RealmModel.m in Sources */,
+				6A2886D31FC7BCE1005869D6 /* RealmManager.m in Sources */,
 				6A28866E1FC66A25005869D6 /* StudentModel.m in Sources */,
 				6A2886741FC66A25005869D6 /* EditDataVC.m in Sources */,
 				6A28867B1FC66A25005869D6 /* QueryCell.m in Sources */,

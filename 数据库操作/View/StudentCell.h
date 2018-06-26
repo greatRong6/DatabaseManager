@@ -15,5 +15,6 @@
 
 -(void)initWithData:(id)data;
 -(void)initWithModelData:(id)data;
+-(void)initWithRealmData:(id)data;
 
 @end

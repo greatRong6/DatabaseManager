@@ -38,9 +38,9 @@ static NSString *const UserTable = @"user";
     instance = nil;
 }
 
-
 - (BOOL)creatDB
 {
+    
     NSString *dbPath = [self getDBPath];
     NSLog(@"DBPath:%@",dbPath);
     self.dataBase = [[WCTDatabase alloc]initWithPath:dbPath];

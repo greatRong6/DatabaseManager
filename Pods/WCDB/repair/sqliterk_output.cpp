@@ -22,7 +22,15 @@
 #include <assert.h>
 #include <errno.h>
 #include <map>
+#ifdef WCDB_BUILTIN_SQLCIPHER
+#ifdef WCDB_COCOAPODS
+#include "sqlite3.h"
+#else //WCDB_COCOAPODS
+#include <sqlcipher/sqlite3.h>
+#endif //WCDB_COCOAPODS
+#else  //WCDB_BUILTIN_SQLCIPHER
 #include <sqlite3.h>
+#endif //WCDB_BUILTIN_SQLCIPHER
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>

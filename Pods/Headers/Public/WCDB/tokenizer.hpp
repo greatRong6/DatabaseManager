@@ -1,1 +1,1 @@
-../../../WCDB/apple/WCDB/core/tokenizer.hpp
+../../../WCDB/objc/WCDB/core/tokenizer.hpp

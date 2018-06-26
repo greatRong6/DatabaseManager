@@ -17,8 +17,13 @@
 #import "WCDModel.h"
 #import "WCDManager.h"
 
+#import "RLMResults.h"
+#import "RealmModel.h"
+
 #define DEF_WIDTH [UIScreen mainScreen].bounds.size.width
 #define DEF_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define RealmPath @"realmDB.realm"
 
 @interface AddStudentVC ()<UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate>
 
@@ -108,7 +113,7 @@
             
         }];
         
-    }else{
+    }else if([self.isFmdb isEqualToString:@"1"]){
         
         NSArray *array = [[WCDManager defaultManager] getAllUser];
         
@@ -117,6 +122,24 @@
         [self.dataArray addObjectsFromArray:array];
         [self.dataSource addObjectsFromArray:self.dataArray];
         [self.tableView reloadData];
+        
+    }else if([self.isFmdb isEqualToString:@"2"]){
+        
+        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *dbPath = [docPath stringByAppendingPathComponent:RealmPath];
+        NSLog(@"数据库目录 = %@",dbPath);
+
+        RLMRealm *realm = [RLMRealm realmWithURL:[NSURL URLWithString:dbPath]];
+        
+        RLMResults *otherDogs = [RealmModel allObjectsInRealm:realm];
+        
+        NSArray *array = (NSArray *)otherDogs;
+        
+        [self.dataArray addObjectsFromArray:array];
+        [self.dataSource addObjectsFromArray:self.dataArray];
+        [self.tableView reloadData];
+
+        NSLog(@"%@",otherDogs);
         
     }
 
@@ -149,8 +172,24 @@
     
     if ([self.isFmdb isEqualToString:@"0"]) {
         [[EditFMDB shareInstance] deleteWithTitle:@"people.sqlite"];
-    }else{
+    }else if ([self.isFmdb isEqualToString:@"1"]){
         [[WCDManager defaultManager] deleteAllUsers];
+    }else{
+        
+        //删除制定的cell
+        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSString *dbPath = [docPath stringByAppendingPathComponent:RealmPath];
+        NSLog(@"数据库目录 = %@",dbPath);
+        
+        RLMRealm *realm = [RLMRealm realmWithURL:[NSURL URLWithString:dbPath]];
+        
+        [realm transactionWithBlock:^{
+            
+            RLMResults *result = [RealmModel allObjectsInRealm:realm];
+            [realm deleteObjects:result];
+
+        }];
+        
     }
     [self loadData];
     
@@ -170,9 +209,12 @@
     if ([self.isFmdb isEqualToString:@"0"]) {
         StudentModel *model = self.dataSource[indexPath.row];
         [cell initWithData:model];
-    }else{
+    }else if ([self.isFmdb isEqualToString:@"1"]){
         WCDModel *model = self.dataSource[indexPath.row];
         [cell initWithModelData:model];
+    }else{
+        RealmModel *model = self.dataSource[indexPath.row];
+        [cell initWithRealmData:model];
     }
     return cell;
     
@@ -190,13 +232,33 @@
     [UIAlertController initWithShowAddTextF:@"提示" message:@"修改手机号" cancleTitle:@"取消" holderText:@"请输入手机号" otherBtn:@[@"确定"] viewController:self successBlock:^(id value, id value1) {
         NSString *numStr = (NSString *)value1;
         if ([weakSelf.isFmdb isEqualToString:@"0"]) {
+            
             StudentModel *model = weakSelf.dataSource[indexPath.row];
             model.telNum = numStr;
             [[EditFMDB shareInstance] updateWithModel:model];
-        }else{
+            
+        }else if ([weakSelf.isFmdb isEqualToString:@"1"]){
+            
             WCDModel *model = weakSelf.dataSource[indexPath.row];
             model.telNum = numStr;
             [[WCDManager defaultManager] updateAgeAndUserIDWithMod:model];
+            
+        }else{
+            
+            //修改
+            NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+            NSString *dbPath = [docPath stringByAppendingPathComponent:RealmPath];
+            NSLog(@"数据库目录 = %@",dbPath);
+            
+            RLMRealm *realm = [RLMRealm realmWithURL:[NSURL URLWithString:dbPath]];
+
+            [realm transactionWithBlock:^{
+                RLMResults *result = [RealmModel allObjectsInRealm:realm];
+                RealmModel *realmModel = [result objectAtIndex:indexPath.row];
+                realmModel.telNum = numStr;
+                [realm commitWriteTransaction];
+            }];
+            
         }
         [weakSelf loadData];
     }];
@@ -216,11 +278,26 @@
             StudentModel *model = self.dataSource[indexPath.row];
             [[EditFMDB shareInstance] deleteWithTitle:@"people.sqlite" withUserID:model.userID];
             
-        }else{
+        }else if ([self.isFmdb isEqualToString:@"1"]){
             
             WCDModel *model = self.dataSource[indexPath.row];
             [[WCDManager defaultManager] deleteUser:model];
             
+        }else{
+            
+            //删除制定的cell
+            NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+            NSString *dbPath = [docPath stringByAppendingPathComponent:RealmPath];
+            NSLog(@"数据库目录 = %@",dbPath);
+            
+            RLMRealm *realm = [RLMRealm realmWithURL:[NSURL URLWithString:dbPath]];
+            [realm transactionWithBlock:^{
+                
+                RLMResults *result = [RealmModel allObjectsInRealm:realm];
+                [realm deleteObject:result[indexPath.row]];
+                
+            }];
+
         }
         
         [self.dataSource removeObjectAtIndex:indexPath.row];
@@ -275,7 +352,7 @@
                 self.dataSource = [NSMutableArray arrayWithArray:self.dataArray];
             }
             
-        }else{
+        }else if ([self.isFmdb isEqualToString:@"1"]){
             
             if (searchText!=nil && searchText.length>0) {
                 NSArray *array = [[WCDManager defaultManager] getUserWithName:searchText];
@@ -284,6 +361,10 @@
                 self.dataSource = [NSMutableArray arrayWithArray:self.dataArray];
             }
 
+        }else{
+            
+            
+            
         }
         //回到主线程
         dispatch_async(dispatch_get_main_queue(), ^{
